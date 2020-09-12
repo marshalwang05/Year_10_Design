@@ -20,15 +20,24 @@ def process(*args):
 
 	if (check==True):
 		#Remove leftmost 0
+		val = remove0 (val)
 		#Conversions
 		#Update display wiht conversions
-		lab_results.configure(text= "VALID INPUT")
+		lab_results.configure(text= "VALID INPUT " + val)
 	else:
 
 		lab_results.configure(text = "INVALID")
 		#Display Error
 
 	ent_value.delete(0, tk.END)
+
+def remove0(str):
+	for i in range(0, len(str), 1):
+		if (str[i]=="1"):
+			return (str[i:])
+
+	return str
+
 
 
 def check01(str):

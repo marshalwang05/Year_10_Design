@@ -65,7 +65,7 @@ def first_last6(nums):
 
 #Concatenation
 
-def hello_name(a):
+def hello_name(str):
 
 	#Add hello to a given name 
 
