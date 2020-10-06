@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Saving a JSON
+</title>
+<button onclick="saveJson()">Download</button>
+
+
+</div>
+</head>
+<body>
+
+<script>
+
+function change() {
+return fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+ .then((resp) => resp.json()) // Transform the data into json
+ .then(function(data) {
+  return data;
+ });
+}
+
+function download(content, fileName, contentType) {
+   var a = document.createElement("a");
+   var file = new Blob([content], {type: contentType});
+   a.href = URL.createObjectURL(file);
+   a.download = fileName;
+   a.click();
+}
+// download(jsonData, 'json.txt', 'text/plain');
+
+function saveJson(){
+change().then(function(result) {
+// console.log(result);
+download(JSON.stringify(result), 'json.txt', 'text/plain');
+});
+}
+
+
+
+</script>
+
+</body>
+</html>
