@@ -1,4 +1,7 @@
 function modEmail(email){
+	if(!email.includes("@")){
+		return false;
+	}
 	const index_of_at = email.indexOf("@");
 	var result = "";
 	for(var i = 0; i<index_of_at; i++){
@@ -11,7 +14,7 @@ function modEmail(email){
 }
 console.log(modEmail("m.arshal.wang@gmail.com"));
 console.log(modEmail("m...............arshalwang@gmail.com"));
-console.log(modEmail("marshalwang@gmail.com"));
+console.log(modEmail("marshalwanggmail.com"));
 
 function passwordRequirement(password){
 	password = password.toString();
