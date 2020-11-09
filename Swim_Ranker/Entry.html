@@ -2,29 +2,71 @@
 
 <head>
   <link rel="stylesheet" href="Entry.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!--Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!--Google Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <!-- Favicon -->
+  <link rel = "icon" href = "https://www.swimming.ca/brand/images/logo-medium2x.png" type = "image/x-icon"> 
+  <!-- Title -->
+  <title>Entry Page</title>
 </head>
 
 <body>
-  <div class="row">
-    <div class="column" style="">
-
-      <center style="top: 30%; position:absolute; left: 20%; text-align: left;">
+ <div class="valign-wrapper height-wrapper">
+   <div class="container">
+    <div class="row" style="height:75vh">
+      <div class="col s6 center-block" style="height:100%">
         <div>
-          <h1 style="float:right;">Entry</h1>
+          <br>
+          <h2>
+            <br>
+            <img src="https://static.thenounproject.com/png/30440-200.png" width="60" height="60">
+            <b>Entry</b>
+          </h2>
+          <form class="">
+           <div class="input-field s6">
+            <input id="fname" type="text" class="validate" style="width: 50%">
+            <label for="fname">First Name</label>
+          </div>
+          <div class="input-field s6">
+            <input id="lname" type="text" class="validate" style="width: 50%">
+            <label for="lname">Last Name</label>
+          </div>
+      
+          <button type="Submit" class="btn waves-effect waves-light"><a href="Rankings.html">Submit</a><i class="material-icons right">send</i></button>
         </div>
-        <form>
-         <input type="text" id="fname" name="fname" placeholder="First Name"><br><br>
-         <input type="text" id="lname" name="lname" placeholder="Last Name">
-       </form>
-
-       <button type="Submit"><a href="Rankings.html">Skip to Rankings</a></button>
-       <button type="Submit"><a href="Entry.html">Next</a></button>
-     </center>
-   </div>
-   <div class="column">
-    <div class="bg">
-      <b><p style="top: 42%; position: absolute; left: 65%; color: white; font-size: 20px;">Enter your times to participate.</p></b>
-      <p style="top: 47%; position: absolute; left: 67%; color: white; font-size: 20px;">Your times will be recorded.</p>
-    </div> 
+      </div>
+      <div class="height-wrapper valign-wrapper bg">
+       <div class="col s6 center-block">
+         <div class=''>
+           <div style="color: white;">
+            <p style="font-size: 24px;"><b>Enter your times to participate.</b></p>
+            <p style="font-size: 18px;">Your times will be recorded.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+</div>
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $('.dropdown-trigger').dropdown();
+</script>
+
+
+</body>

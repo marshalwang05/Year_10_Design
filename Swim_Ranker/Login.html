@@ -2,60 +2,78 @@
 
 <head>
   <link rel="stylesheet" href="Login.css">
-<!--Materialize CSS -->
+  <!--Materialize CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<!--Materialize JS -->
+  <!--Materialize JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<!--Google Fonts -->
+  <!--Google Fonts -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<!--Title -->
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <!-- Favicon -->
+  <link rel = "icon" href = "https://www.swimming.ca/brand/images/logo-medium2x.png" type = "image/x-icon"> 
+  <!--Title -->
   <title>Login Swim Rankings</title>
 </head>
 
 <body>
-
-
-  
-<p style="top: 40%; position: absolute; left: 65%; color: white; font-size: 20px;"><b>Welcome to Swim Rankings!</b><br><br>To add your time, please proceed with the login.</p>
-
-<div class="container">
-  <div class="row">
-    
+ <div class="valign-wrapper height-wrapper">
+   <div class="container">
+    <div class="row" style="height:75vh">
+     <div class="col s6 center-block" style="height:100%"  id="login">
+      <div>
+        <br>
+        <h2>
+          <br>
+          <!--Login Logo -->
+          <img src="https://static.thenounproject.com/png/226-200.png" width="60" height="60">
+          <b>Login</b>
+        </h2>
+        <!--Forms -->
+        <form class="">
+         <div class="input-field s6">
+          <input id="email" type="email" class="validate" style="width: 50%">
+          <label for="email">Email</label>
+        </div>
+         <div class="input-field s6">
+          <input id="password" type="password" class="validate" style="width: 50%">
+          <label for="password">Password</label>
+        </div>
+       </form>
+        <!--Buttons -->
+       <button type="Submit" class="waves-effect waves-light btn"><a href="Rankings.html">Skip to Rankings</a></button>
+       <button type="Submit" onclick="checkEntry();" class="btn waves-effect waves-light"><a href="Entry.html">Next</a><i class="material-icons right">send</i></button>
+     </div>
+   </div>
+   <!--Second Column -->
+   <div class="height-wrapper valign-wrapper bg">
+     <div class="col s6 center-block">
+       <div class=''>
+         <div style="color: white;">
+          <p style="font-size: 24px;"><b>Welcome to Swim Rankings!</b></p>
+          <p style="font-size: 18px;">To add your time, please proceed with the login, or skip to rankings if you just want to take a look.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
-
-
-
-<center style="top: 30%; position:absolute; left: 20%; text-align: left;">
-        <h1 style="float:right;">Login</h1>
-        <form>
-         <input type="text" id="email" name="email" placeholder="Email"><br><br>
-         <input type="text" id="password" name="password" placeholder="Password">
-       </form>
-
-       <button type="Submit"><a href="Rankings.html">Skip to Rankings</a></button>
-       <button type="Submit"><a href="Entry.html">Next</a></button>
-     </center>
-
-
-
-
-
-
-
-
-
-
+</div>
+</div>
 
 <script>
-  function checkEmail(email){
-    c= email.contains("@")
+  function checkEntry(){
+    var email = document.getElementById("email").value;
+    console.log(email);
+    if(!email.includes("@")||!email.substring(email.indexOf("@"), email.length).includes(".")){
+      M.toast({html: 'Invalid Email'})
+    }
+    var password = document.getElementById("password").value;
+    console.log(password);
+    if(password.length<6||password.toLowerCase()==password||!/\d/.test(password)){
+      M.toast({html: 'Password must be at least 6 characters, contain a capital, and a number'})
+    }
   }
   function modEmail(email){
-    if (checkEmail(email) == false){
-      return -1
-    }
     if(!email.includes("@")){
       return false;
     }
@@ -68,7 +86,11 @@
     result+=email.substring(index_of_at, email.length);
 
     return result;
+    console.log(result);
   }
+
+
+
 </script>
 </body>
 

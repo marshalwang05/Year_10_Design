@@ -1,32 +1,13 @@
-body{
-	top-margin:-26px;
+html, body, .height-wrapper {
+     height: 100%;
 }
-a:visited{
-	color: gray
-}
-
 .bg{
-	background-image: url("https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2013/8/1/1375354802439/Blue---the-colour-008.jpg?width=445&quality=85&auto=format&fit=max&s=9470f3941ff8fe61fb8f78b1838d6bc5");
 	height:100%;
 	background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-image: url("EntryBackground.jpg")
 }
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 100%;
-}
-
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-*{
-	font-family: 'proxima-nova', sans-serif;
-	box-sizing: border-box;
+a:visited{
+	color: white;
 }
