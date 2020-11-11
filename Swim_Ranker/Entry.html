@@ -16,56 +16,112 @@
 </head>
 
 <body>
- <div class="valign-wrapper height-wrapper">
-   <div class="container">
-    <div class="row" style="height:75vh">
-      <div class="col s6 center-block" style="height:100%">
-        <div>
-          <br>
-          <h2>
+  <div id="entryPage">
+   <div class="valign-wrapper height-wrapper">
+     <div class="container">
+      <div class="row" style="height:75vh">
+        <div class="col s6 center-block" style="height:100%">
+          <div>
             <br>
-            <img src="https://static.thenounproject.com/png/30440-200.png" width="60" height="60">
-            <b>Entry</b>
-          </h2>
-          <form class="">
-           <div class="input-field s6">
-            <input id="fname" type="text" class="validate" style="width: 50%">
-            <label for="fname">First Name</label>
+            <h2>
+              <br>
+              <img src="https://static.thenounproject.com/png/30440-200.png" width="60" height="60">
+              <b>Entry</b>
+            </h2>
+            <form class="">
+              <div class="input-field s6">
+                <i class="material-icons prefix">message</i>
+                <input id="fname" type="text" class="validate" style="width: 50%">
+                <label for="fname">First Name</label>
+              </div>
+              <div class="input-field s6">
+                <i class="material-icons prefix">message</i>
+                <input id="lname" type="text" class="validate" style="width: 50%">
+                <label for="lname">Last Name</label>
+              </div>
+              <div class="input-field s6">
+                <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Sex 
+                <i class="material-icons right">arrow_drop_down</i></a>
+                <ul id='dropdown1' class='dropdown-content'>
+                  <li><a href="#!">Male</a></li>
+                  <li class="divider" tabindex="-1"></li>
+                  <li><a href="#!">Female</a></li>
+                </ul>
+              </div>
+              <div class="input-field s6">
+                <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Stroke 
+                <i class="material-icons right">arrow_drop_down</i></a>
+                <ul id='dropdown2' class='dropdown-content'>
+                  <li><a href="#!">Butterfly</a></li>
+                  <li><a href="#!">Backstroke</a></li>
+                  <li class="divider" tabindex="-1"></li>
+                  <li><a href="#!">Breaststroke</a></li>
+                  <li class="divider" tabindex="-1"></li>
+                  <li><a href="#!">Freestyle</a></li>
+                  <li><a href="#!">three</a></li>
+                </ul>
+              </div>
+              <div class="input-field s6">
+                <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+                <ul id='dropdown1' class='dropdown-content'>
+                  <li><a href="#!">one</a></li>
+                  <li><a href="#!">two</a></li>
+                  <li class="divider" tabindex="-1"></li>
+                  <li><a href="#!">three</a></li>
+                  <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                  <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+                </ul>
+              </div>
+              <div class="input-field s6">
+                <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+                <ul id='dropdown1' class='dropdown-content'>
+                  <li><a href="#!">one</a></li>
+                  <li><a href="#!">two</a></li>
+                  <li class="divider" tabindex="-1"></li>
+                  <li><a href="#!">three</a></li>
+                  <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                  <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+                </ul>
+              </div>
+            </form>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <button type="Submit" class="btn waves-effect waves-light"><a href="Rankings.html">Submit</a><i class="material-icons right">send</i></button>
           </div>
-          <div class="input-field s6">
-            <input id="lname" type="text" class="validate" style="width: 50%">
-            <label for="lname">Last Name</label>
-          </div>
-      
-          <button type="Submit" class="btn waves-effect waves-light"><a href="Rankings.html">Submit</a><i class="material-icons right">send</i></button>
         </div>
-      </div>
-      <div class="height-wrapper valign-wrapper bg">
-       <div class="col s6 center-block">
-         <div class=''>
-           <div style="color: white;">
-            <p style="font-size: 24px;"><b>Enter your times to participate.</b></p>
-            <p style="font-size: 18px;">Your times will be recorded.</p>
+        <div class="height-wrapper valign-wrapper bg">
+         <div class="col s6 center-block">
+           <div class=''>
+             <div style="color: white;">
+              <p style="font-size: 24px;"><b>Enter your times to participate.</b></p>
+              <p style="font-size: 18px;">Your times will be recorded.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-</div>
-
 
 
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    options = {};
     var elems = document.querySelectorAll('.dropdown-trigger');
     var instances = M.Dropdown.init(elems, options);
   });
 
-  // Or with jQuery
-
-  $('.dropdown-trigger').dropdown();
 </script>
 
 
