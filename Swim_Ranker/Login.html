@@ -17,7 +17,7 @@
 </head>
 
 <body>
- 
+
   <div id="loginPage">
    <div class="valign-wrapper height-wrapper">
      <div class="container">
@@ -82,65 +82,59 @@
                 <input id="lname" type="text" class="validate" style="width: 50%">
                 <label for="lname">Last Name</label>
               </div>
-              <div class="input-field s6">
-                <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Sex
-                <i class="material-icons right">arrow_drop_down</i></a>
-                <ul id='dropdown1' class='dropdown-content'>
-                  <li><a href="#!">Male</a></li>
-                  <li class="divider" tabindex="-1"></li>
-                  <li><a href="#!">Female</a></li>
-                </ul>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">face</i>
+                <select>
+                  <option value="" disabled selected>Gender</option>
+                  <option value="1">Male</option>
+                  <option value="2">Female</option>
+                  <option value="3">No Answer</option>
+                </select>       
               </div>
-              <div class="input-field s6">
-                <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Stroke
-                <i class="material-icons right">arrow_drop_down</i></a>
+              <br>
+              <br>
+              <br>
+              <br>
+              <div class="input-field col s4">
+                <select>
+                  <option value="" disabled selected>Stroke</option>
+                  <option value="1">Butterfly</option>
+                  <option value="2">Backstroke</option>
+                  <option value="3">Breaststroke</option>
+                  <option value="4">Freestyle</option>
+                </select>
+              </div>
+              <div class="input-field col s4">
+                <select>
+                  <option value="" disabled selected>Length</option>
+                  <option value="1">50</option>
+                  <option value="2">100</option>
+                  <option value="3">200</option>
+                  <option value="4">400</option>
+                </select>
+              </div>
+              <div class="input-field col s4">
+                <select>
+                  <option value="" disabled selected>Course</option>
+                  <option value="1">LCM</option>
+                  <option value="2">SCM</option>
+                </select>
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="input-field s12">
+                <i class="material-icons prefix">schedule</i>
+                <input id="time" type="text" class="validate" style="width: 50%">
+                <label for="time">Time</label>
+                <input id="time" type="text" class="validate" style="width: 50%">
+                <label for="time">Time</label>
+                <input id="time" type="text" class="validate" style="width: 50%">
+                <label for="time">Time</label>
+              </div>
 
-                <ul id='dropdown2' class='dropdown-content'>
-                  <li><a href="#!">Butterfly</a></li>
-                  <li><a href="#!">Backstroke</a></li>
-                  <li class="divider" tabindex="-1"></li>
-                  <li><a href="#!">Breaststroke</a></li>
-                  <li class="divider" tabindex="-1"></li>
-                  <li><a href="#!">Freestyle</a></li>
-                  <li><a href="#!">three</a></li>
-                </ul>
-              </div>
-              <div class="input-field s6">
-                <a class='dropdown-trigger btn' href='#' data-target='dropdown3'>Drop Me!</a>
-                <ul id='dropdown3' class='dropdown-content'>
-                  <li><a href="#!">one</a></li>
-                  <li><a href="#!">two</a></li>
-                  <li class="divider" tabindex="-1"></li>
-                  <li><a href="#!">three</a></li>
-                  <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-                  <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-                </ul>
-              </div>
-              <div class="input-field s6">
-                <a class='dropdown-trigger btn' href='#' data-target='dropdown4'>Drop Me!</a>
-                <ul id='dropdown4' class='dropdown-content'>
-                  <li><a href="#!">one</a></li>
-                  <li><a href="#!">two</a></li>
-                  <li class="divider" tabindex="-1"></li>
-                  <li><a href="#!">three</a></li>
-                  <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-                  <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-                </ul>
-              </div>
             </form>
             <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
             <button type="Submit" class="btn waves-effect waves-light"><a href="Rankings.html">Submit</a><i class="material-icons right">send</i></button>
           </div>
         </div>
@@ -156,13 +150,13 @@
       </div>
     </div>
   </div>
- 
+
   <script>
 
-  const lPage = document.getElementById("loginPage");
-  lPage.style.display = "none";
-  const ePage =document.getElementById("entryPage");
-  ePage.style.display = "block";
+  // const lPage = document.getElementById("loginPage");
+  // lPage.style.display = "none";
+  // const ePage =document.getElementById("entryPage");
+  // ePage.style.display = "block";
 
   function checkEntry(){
     var email = document.getElementById("email").value;
@@ -198,11 +192,11 @@
       hover: false,
       closeOnClick: true
     };
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var instances = M.Dropdown.init(elems, options);
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
   });
 
 </script>
 </body>
- 
+
 </html>
