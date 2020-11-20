@@ -14,21 +14,94 @@
 </head>
 <body>
 
-<div class="input-field col s12">
-    <select>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </select>
-    <label>Materialize Select</label>
+  <div id="rankingsPage">
+    <div class="container">
+      <div class="row">
+        <div class="col s4">
+          <h2>
+            <br>
+            <!--Login Logo -->
+            <img src="https://static.thenounproject.com/png/226-200.png" width="60" height="60">
+            <b>Rankings</b>
+          </h2>
+          <form class="">
+            <div class="input-field col s10">
+              <select>
+                <option value="" disabled selected>Gender in Competition</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+                <option value="3">No Answer</option>
+              </select>      
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="input-field col s6">
+              <select>
+                <option value="" disabled selected>Stroke</option>
+                <option value="1">Butterfly</option>
+                <option value="2">Backstroke</option>
+                <option value="3">Breaststroke</option>
+                <option value="4">Freestyle</option>
+              </select>
+            </div>
+            <div class="input-field col s6">
+              <select>
+                <option value="" disabled selected>Length</option>
+                <option value="1">50</option>
+                <option value="2">100</option>
+                <option value="3">200</option>
+                <option value="4">400</option>
+              </select>
+            </div>
+            <div class="input-field col s5">
+              <select>
+                <option value="" disabled selected>Course</option>
+                <option value="1">LCM</option>
+                <option value="2">SCM</option>
+              </select>
+            </div>
+            <br>
+          </form>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <button type="submit" onclick="" class="btn waves-effect waves-light">View Rankings</button>
+        </div>
+        <div class="col s4">
+          <br>
+          <br>
+          <br>
+          <br>
+          <img src="RankingsBackground.jpg" width="100%">
+        </div>
+        <div class="col s4">
+          <h2>
+            <br>
+            <img src="https://i.pinimg.com/564x/26/49/7e/26497e35284730778dd396c19c3650d1.jpg" width="60" height="60">
+            <b>Event Standings</b>
+          </h2>
+          Same
+        </div>
+      </div>
+    </div>
   </div>
 
-<script>
-	
-	document.addEventListener('DOMContentLoaded', function() {
+  <script>
+
+   document.addEventListener('DOMContentLoaded', function() {
+    options = {
+      hover: false,
+      closeOnClick: true
+    };
     var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, option);
+    var instances = M.FormSelect.init(elems, options);
   });
 </script>
 

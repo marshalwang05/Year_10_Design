@@ -1,0 +1,291 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="index.css">
+  <!--Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!--Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!--Google Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <!-- Favicon -->
+  <link rel = "icon" href = "https://www.swimming.ca/brand/images/logo-medium2x.png" type = "image/x-icon">
+  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+  <title>Login Swim Rankings</title>
+</head>
+
+<body>
+
+  <div id="loginPage">
+   <div class="valign-wrapper height-wrapper">
+     <div class="container">
+      <div class="row" style="height:75vh">
+       <div class="col s6 center-block" style="height:100%"  id="login"> <!--b -->
+
+
+
+          <div> <!--a -->
+            <br>
+            <h2>
+              <br>
+              <!--Login Logo -->
+              <img src="https://static.thenounproject.com/png/226-200.png" width="60" height="60">
+              <b>Login</b>
+            </h2>
+            <!--Forms -->
+            <form class="">
+              <div class="input-field s6">
+                <input id="email" type="email" class="validate" style="width: 50%">
+                <label for="email">Email</label>
+              </div>
+              <div class="input-field s6">
+                <input id="password" type="password" class="validate" style="width: 50%">
+                <label for="password">Password</label>
+              </div>
+            </form>
+          <!--Buttons -->
+            <button type="submit" class="waves-effect waves-light btn" onclick="skipRankings();">Skip to Rankings</button>
+            <button type="submit" onclick="checkEntry()" class="btn waves-effect waves-light">Next<i class="material-icons right">send</i></button>
+          </div> <!--a -->
+
+
+
+        </div> <!--b -->
+    <!--Second Column -->
+
+        <div class="height-wrapper valign-wrapper bg" id="bg1">
+            <div style="color: white;" class="col s6 center-block">
+              <p style="font-size: 24px;"><b>Welcome to Swim Rankings!</b></p>
+              <p style="font-size: 18px;">To add your time, please proceed with the login, or skip to rankings if you just want to take a look.</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div id="entryPage">
+   <div class="valign-wrapper height-wrapper">
+     <div class="container">
+      <div class="row" style="height:90vh">
+        
+        <!-- Column 1 -->
+        <div class="col s6 center-block" style="height:100%">
+          <br>
+          <h2>
+            <img src="https://static.thenounproject.com/png/30440-200.png" width="60" height="60">
+            <b>Entry</b>
+          </h2>
+          <!-- Form -->
+          <form class="">
+            <div class="input-field s6">
+              <i class="material-icons prefix">message</i>
+              <input id="fname" type="text" class="validate" style="width: 50%">
+              <label for="fname">First Name</label>
+            </div>
+            <div class="input-field s6">
+              <i class="material-icons prefix">message</i>
+              <input id="lname" type="text" class="validate" style="width: 50%">
+              <label for="lname">Last Name</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">face</i>
+              <select id='gender'>
+                <option value="" disabled selected>Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="No Answer">No Answer</option>
+              </select>      
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="input-field col s4">
+              <select id='stroke'>
+                <option value="" disabled selected>Stroke</option>
+                <option value="Butterfly">Butterfly</option>
+                <option value="Backstroke">Backstroke</option>
+                <option value="Breaststroke">Breaststroke</option>
+                <option value="Freestyle">Freestyle</option>
+              </select>
+            </div>
+            <div class="input-field col s4">
+              <select id='distance'>
+                <option value="" disabled selected>Length</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+              </select>
+            </div>
+            <div class="input-field col s4">
+              <select id='course'>
+                <option value="" disabled selected>Course</option>
+                <option value="LCM">LCM</option>
+                <option value="SCM">SCM</option>
+              </select>
+            </div>
+            <br>
+            <br>
+            <br>
+            <span class="input-field s1">
+              <i class="material-icons prefix">schedule</i>
+              <input id="time1" type="text" class="validate" style="width: 10%">
+              <label for="time1">[00]</label>
+            </span>
+            <span class="input-field s1">
+              <input disabled value=":" id="disabled1" type="text" class="validate" style="width: 3%">
+            </span>
+            <span class="input-field s1">
+              <input id="time2" type="text" class="validate" style="width: 10%">
+            <label for="time2">[00]</label>
+            </span>
+            <span class="input-field s1">
+              <input disabled value=":" id="disabled2" type="text" class="validate" style="width: 3%">
+            </span>
+            <span class="input-field s1">
+              <input id="time3" type="text" class="validate" style="width: 10%">
+              <label for="time3">[00]</label>
+            </span>
+          </form>
+          <br>
+          <br>
+          <br>
+          <button type="submit" class="btn waves-effect waves-light" onclick='submitEntry()' id="submit">Submit<i class="material-icons right">send</i></button>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="height-wrapper valign-wrapper bg">
+         <div class="col s6 center-block">
+           <div class=''>
+             <div style="color: white;">
+              <p style="font-size: 24px;"><b>Enter your times to participate.</b></p>
+              <p style="font-size: 18px;">Your times will be recorded.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Column 2 -->
+
+
+      </div>
+    </div>
+  </div>
+ </div>
+
+  <div id="rankingsPage">
+    <div class="container">
+      <div class="row">
+        <div class="col s4">
+          <h2>
+            <br>
+            <!--Login Logo -->
+            <img src="https://static.thenounproject.com/png/226-200.png" width="60" height="60">
+            <b>Rankings</b>
+          </h2>    
+          <br>
+          <form class="">
+            <div class="input-field col s12">
+              <select id="rgender">
+                <option value="none" disabled selected>Gender in Competition</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="No Answer">No Answer</option>
+              </select>      
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="input-field col s6">
+              <select id="rstroke">
+                <option value="none" disabled selected>Stroke</option>
+                <option value="Butterfly">Butterfly</option>
+                <option value="Backstroke">Backstroke</option>
+                <option value="Breaststroke">Breaststroke</option>
+                <option value="Freestyle">Freestyle</option>
+              </select>
+            </div>
+            <div class="input-field col s6">
+              <select id="rdistance">
+                <option value="none" disabled selected>Length</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+              </select>
+            </div>
+            <div class="input-field col s6">
+              <select id="rcourse">
+                <option value="none" disabled selected>Course</option>
+                <option value="LCM">LCM</option>
+                <option value="SCM">SCM</option>
+              </select>
+            </div>
+            <br>
+          </form>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <center><button type="submit" onclick="getData()" class="btn waves-effect waves-light">View Rankings</button></center>
+          <br>
+          <br>
+          <br>
+          <center><button type="submit" onclick="backEntry()" class="btn waves-effect waves-light">Add Another Time</button></center>
+          <br>
+          <br>
+          <center><button type="submit" onclick="backHome()" class="btn waves-effect waves-light">Back to Home Page</button></center>
+          <br>
+          <br>
+          <br>
+        </div>
+        <div class="col s4">
+          <br>
+          <br>
+          <br>
+          <br>
+          <img src="RankingsBackground.jpg" width="100%">
+        </div>
+        <div class="col s4">
+          <h2>
+            <br>
+            <i class="material-icons prefix" style="font-size: 58px">timer</i>
+            <b>Event Standings</b>
+          </h2>
+          <h6 id="eventName">
+          </h6>
+          <p>
+            <div class = "row">
+              <div class="col s9">  
+                <ol id="nameList"></ol>
+              </div>  
+              <div class="col s3">
+                <ul id="timeList"></ul>
+              </div>
+            </div>  
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="index.js"></script>
+
+</body>
+
+</html>

@@ -1,6 +1,9 @@
 //Faking It:
 //This means storing all the data and user informations in lists so it is there when the program starts.
 
+var lNames = [""];
+var fNames = [""];
+var 
 var uNames = ["user1@test.com", "user2@test.com"];
 var pWords = ["pword1", "pword2"];
 

@@ -6,7 +6,10 @@ html, body, .height-wrapper {
 	background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("LoginBackground.jpg")
+    background-image: url("EntryBackground.jpg")
+}
+#bg1{
+	background-image: url("LoginBackground.jpg")
 }
 a:visited{
 	color: white
