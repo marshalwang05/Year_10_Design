@@ -17,7 +17,6 @@
     };
 
 
-
   document.addEventListener('DOMContentLoaded', function() {
     options = {
       hover: false,
@@ -226,9 +225,9 @@ function GetSortOrder(prop) {
     const rPage = document.getElementById("rankingsPage");
     rPage.style.display = "none";
 
-    document.getElementById("rstroke").value = 'none'
-    document.getElementById("rdistance").value = 'none'
-    document.getElementById("rcourse").value = 'none'
+    document.getElementById("rstroke").value = "";
+    document.getElementById("rdistance").value = "";
+    document.getElementById("rcourse").value = "";
 
   }
   function skipRankings(){

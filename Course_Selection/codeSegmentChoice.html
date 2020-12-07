@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<div id="form1" class="choiceform">
+	  <p>Question #1</p>
+	  <input type="radio" id="choice1A" name="choice" value="A">
+	  <label for="choice1A">A</label><br>
+	  <input type="radio" id="choice1B" name="choice" value="B">
+	  <label for="choice1B">B</label><br>
+	  <button type="submit1" value="Submit" onclick="next()">></button>
+	</div>
+
+	<div id="form2" class="choiceform">
+	  <p>Question #2</p>
+	  <input type="radio" id="choice2A" name="choice" value="A">
+	  <label for="choice1A">A</label><br>
+	  <input type="radio" id="choice2B" name="choice" value="B">
+	  <label for="choice1B">B</label><br>
+	  <button type="submit2" value="Submit" onclick="nextSubmit()">></button>
+	</div>
+
+	<div id="results"></div>
+
+</body>
+<script type="text/javascript">
+	var progress = ""
+	forms = document.getElementsByClassName("choiceform");
+	results = document.getElementById('results');
+	window.onload = function() {
+	  init();
+	};
+	function init() {
+		for (i = 0; i<forms.length; i++){
+			if (i!=0)
+				forms[i].style.display = "none";
+		}
+		results.display = "none";
+	}
+	function next(){
+		forms[0].style.display = "none";
+		forms[1].style.display = "block";
+		if(document.getElementById('choice1A').checked){
+			progress+="A";
+		}else if(document.getElementById('choice1B').checked){
+			progress+="B";
+		}
+	}
+	function nextSubmit(){
+		forms[0].style.display = "none";
+		forms[1].style.display = "none";
+		if(document.getElementById('choice2A').checked){
+			progress+="A";
+		}else if(document.getElementById('choice2B').checked){
+			progress+="B";
+		}
+		results.innerHTML = "You are a: "+progress;
+		results.display = "block";
+
+	}
+
+</script>
+</html>
