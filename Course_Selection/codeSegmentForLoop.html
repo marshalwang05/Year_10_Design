@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="div1">
+		<p>Number of Courses you know</p>
+		<input type="text" name="Submit" id="numberBox">
+		<br>
+		<button type="submit" value = "Submit" onclick="forLoop()">Number</button>
+		<br>
+	</div>
+
+
+</body>
+
+<script type="text/javascript">
+	function forLoop(){
+		setnumber = document.getElementById('numberBox').value;
+		for (i=0; i<setnumber; i++){
+
+			var para = document.createElement("input"); 
+			var para1 = document.createElement("br"); 
+			var node = document.createTextNode(""); 
+			para.appendChild(node);  
+
+			var element = document.getElementById("div1"); 
+			element.appendChild(para);
+			element.appendChild(para1);
+
+		}
+	}
+</script>
+
+</html>

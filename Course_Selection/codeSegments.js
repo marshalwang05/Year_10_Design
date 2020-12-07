@@ -6,6 +6,12 @@ function checkEmail(email){
 	else{
 		console.log("Invalid")
 	}
+
+	newEmail = email.substring(0,email.indexOf("@ucc.on.ca"));
+
+	fname = newEmail.substring(0,email.indexOf("."));
+	lname = newEmail.substring(email.indexOf(".")+1,newEmail.length);
+	console.log(fname+" "+lname);
 }
 
 firebase.initializeApp(firebaseConfig);
