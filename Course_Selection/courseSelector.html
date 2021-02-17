@@ -4,10 +4,7 @@
 
 	<meta charset=utf8 />
 
-
 	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
-
-
 
 	<link rel="stylesheet" href="courseSelector.css">
 
@@ -34,7 +31,6 @@
 
 
 
-
 <body>
 <div id = "errorpage" style="display: none">
 	Error! Service is not configured for this user. Please use a UCC google account.
@@ -43,6 +39,7 @@
 <div id = "mainpage">
 	<div id = "uid"></div>
 	<button onclick = "signout()">Sign Out</button>
+	
 	<div id = "firstPage" class="row" style="background-color: #0020C2">
 		<div class="container">
 	      	<div class="col s6" id = "card1">
@@ -65,18 +62,17 @@
 		  		<br>
 		  		<div style="text-align: center">
 					<h4>Login Page</h4>
-
+					<br>
+			  		<br>
+			  		<br>
+			  		<br>
+			  		<br>
 					<div class="input-field s6">
 						<input id="email" type="email" class="validate" style="width: 50%; margin-bottom: 10 rem">
 						<label for="email">Email</label>
 						<br>
 						<br>
 						<br>
-						<br>
-				  		<br>
-				  		<br>
-				  		<br>
-				  		<br>
 				  		<br>
 				  		<br>
 				  		<br>
@@ -122,7 +118,7 @@
 						<select>
 							<option value="1">Contemplating life</option>
 							<option value="2">Helping others</option>
-							<option value="3">Calming down someone</option>
+							<option value="3">Calming someone down</option>
 							<option value="3">Making people laugh</option>
 						</select>
 					</div>
@@ -147,15 +143,15 @@
 						</select>
 					</div>
 					<div class="input-field col s4">
+						5. Would you rather:
 						<select name = 'question3' id='option3'>
-							<option value="" disabled unselected>5. Would you rather: </option>
 							<option value="aa">Gain an abundance of knowledge</option>
 							<option value="ai">Use your knowledge</option>
 						</select>
 					</div>
 					<div class="input-field col s4">
+						6. Which appeals to you more:
 						<select>
-							<option value="" disabled unselected>6. Which appeals to you more: </option>
 							<option value="1">Researching</option>
 							<option value="2">Engineering</option>
 							<option value="3">Finance</option>
@@ -163,8 +159,8 @@
 						</select>
 					</div>
 					<div class="input-field col l4">
+						7. Would you rather:
 						<select name = 'question4' id='option4'>
-							<option value="" disabled unselected>7. Would you rather: </option>
 							<option value="chem">Have a broad study with a little bit of everything</option>
 							<option value="physics">Have applicational studies that are easily seen</option>
 							<option value="bio">Gain insight on micro aspects of the world</option>
@@ -179,7 +175,7 @@
 				<button type="submit" class="waves-effect waves-light btn" onclick='showAll()' id="showAll">Show All</button>
 			</div>
 			<div class="row" id="courses">
-		 
+		 	<br>
 			    <!--Arts-->
 				    <div class="col s4 m4 l4" id="art">
 				      <div class="card">
@@ -262,7 +258,7 @@
 				        </div>
 				        <div class="card-content">
 				        	<span class="card-title">History</span>
-				          <p>This course requires students to create and perform in dramatic presentations. Students will analyse, interpret, and perform dramatic works from various cultures and time periods. Students will research various acting styles and conventions that could be used in their presentations, and analyse the functions of playwrights, directors, actors, designers, technicians, and audiences.</p>
+				          <p>This course investigates the connections between nations from the 1880s to 1930s. By examining key events, students will learn about the interaction between the emerging West and other regions of the world, and about the development of modern social, political and economic systems across the Americas. They will use critical thinking and communication skills to investigate the historical roots of contemporary issues. Major units of study include: The Emergence of the Americas as a Global Power, The Mexican Revolution, WWI, The PostWar Peace Agreements and the Great Depression.</p>
 				        </div>
 				      </div>
 				    </div>
@@ -274,7 +270,7 @@
 				        </div>
 				        <div class="card-content">
 				        	<span class="card-title">Philosophy</span>
-				          <p>This course introduces the mathematical concept of the function by extending students’ experiences with linear and quadratic relations. Students will investigate properties of discrete and continuous functions, including trigonometric and exponential functions.</p>
+				          <p>This course addresses the main areas of philosophy – metaphysics, epistemology, ethics, political philosophy, and aesthetics – as both history and practice. Students will explore fundamental issues such as the nature of reality, existence, truth, justice, and beauty. They will study classic philosophical questions as well as contemporary problems such as those that result from globalization and rapidly changing technology. Students will learn how to read analytically, think critically, develop arguments to current social issues and personal experiences.</p>
 				        </div>
 				      </div>
 				    </div>
@@ -283,7 +279,7 @@
 				    <div class="col s12 m6 l4" id="aa">
 				      <div class="card">
 				        <div class="card-image">
-				          <img src="https://www.incimages.com/uploaded_files/image/1920x1080/getty_470493341_20001333200092800_398689.jpg">
+				          <img src="https://www.incimages.com/uploaded_files/image/1920x1080/getty_470493341_20001333200092800_398689.jpg" style="height: 250px">
 				        </div>
 				        <div class="card-content">
 				        	<span class="card-title">Analysis and Approaches</span>
@@ -299,7 +295,7 @@
 				        </div>
 				        <div class="card-content">
 				        	<span class="card-title">Analysis and Interpretation</span>
-				          <p>This course introduces the mathematical concept of the function by extending students’ experiences with linear and quadratic relations. Students will investigate properties of discrete and continuous functions, including trigonometric and exponential functions; represent functions numerically, algebraically, and graphically; solve problems involving applications of functions; investigate inverse functions.</p>
+				          <p>This course broadens students’ understanding of mathematics as it relates to managing data. Students will apply methods for collecting data and using sampling techniques, and calculating probabilities. Students will also refine their use of the mathematical processes by looking at scientific notation, and their applications in finance, simple treatment of logarithms and exponentials.</p>
 				        </div>
 				      </div>
 				    </div>
@@ -352,8 +348,13 @@
 				        </div>
 				      </div>
 				    </div>
-
+				    <br>
+				    <br>
+				
 			</div>
+			<button type="submit" class="waves-effect waves-light btn" onclick='tolPage()' id="next">Next</button>
+			<br>
+			<br>
 		</div>
 	</div> 
 
@@ -362,9 +363,11 @@
 			<div id="courseNumber">
 				<p>Please help this website by telling us what courses you picked</p>
 				
-				<input type="text" name="Submit" id="numberBox"  style='width:10%;height:100%;'>
+				<input type="text" name="Submit" id="numberBox"  style='width:20%;height:100%;'>
 				<br>
 				<button type="submit" value = "Submit" onclick="forLoop()">Number</button>
+				<br>
+				<button type="submit" value = "Submit" onclick="addUser()">Submit</button>
 				<br>
 			</div>
 
@@ -383,299 +386,9 @@
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	<script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
-
-<script>
-   var provider = new firebase.auth.GoogleAuthProvider();
-    var userId = document.getElementById("uid").innerHTML;
-
-    var config = {
-    apiKey: "AIzaSyAAOtTgZfosZ1CKgZxzDciIr6uCSXCIsDA",
-    authDomain: "course-selection-559e0.firebaseapp.com",
-    projectId: "course-selection-559e0",
-    storageBucket: "course-selection-559e0.appspot.com",
-    messagingSenderId: "164519433062",
-    appId: "1:164519433062:web:3e7e75812d45d91300aea7",
-    measurementId: "G-K45VYCNNWX"
-    };
-
-    firebase.initializeApp(config);
-    firebase.auth().onAuthStateChanged(function(user){
-        if (user == null) {
-            var provider = new firebase.auth.GoogleAuthProvider();
-            firebase.auth().signInWithRedirect(provider).then(function(result) {
-              window.location.replace("fbtest.html");
-       });
-        return;
-        } else {
-            userEmail = user.email;
-            document.getElementById("uid").innerHTML = userEmail;
-        }
-        if (userEmail.includes("@ucc.on.ca")){
-          mainpage = document.getElementById("mainpage");
-          mainpage.style.display = "block";
-        } else{
-          errorpage = document.getElementById("errorpage")
-          mainpage.style.display = "none";
-          errorpage.style.display = "block";
-        }
-});
-
-function signout(){
-  firebase.auth().signOut()
-}  
-	
-	  const fPage = document.getElementById("firstPage");
-	  fPage.style.display = "block";
-	  const sPage = document.getElementById("secondPage");
-	  sPage.style.display = "none";
-	  const lPage = document.getElementById("thirdPage");
-	  lPage.style.display = "block";
-
-	  const quiz = document.getElementById("courseQuiz");
-	  quiz.style.display = "none";
-
-	  const art = document.getElementById("art");
-	  art.style.display = "none";
-	  const film = document.getElementById("film");
-	  film.style.display = "none";
-	  const music = document.getElementById("music");
-	  music.style.display = "none";
-	  const drama = document.getElementById("drama");
-	  drama.style.display = "none";
-	  const economics = document.getElementById("economics");
-	  economics.style.display = "none";
-	  const geography = document.getElementById("geography");
-	  geography.style.display = "none";
-	  const history = document.getElementById("history");
-	  history.style.display = "none";
-	  const philosophy = document.getElementById("philosophy");
-	  philosophy.style.display = "none";
-	  const aa = document.getElementById("aa");
-	  aa.style.display = "none";
-	  const ai = document.getElementById("ai");
-	  ai.style.display = "none";
-	  const chemistry = document.getElementById("chemistry");
-	  chemistry.style.display = "none";
-	  const physics = document.getElementById("physics");
-	  physics.style.display = "none";
-	  const bio = document.getElementById("bio");
-	  bio.style.display = "none";
-	  const cs = document.getElementById("cs");
-	  cs.style.display = "none";
+	<script src="courseSelector.js"></script>
 
 
 
-
-	function forLoop(){
-    var setnumber = document.getElementById('numberBox').value;
-    for (var i=0; i<setnumber; i++){
-
-      var para = document.createElement("input"); 
-      var para1 = document.createElement("br"); 
-      para.style.width = "10%";
-      var node = document.createTextNode(""); 
-      para.appendChild(node);  
-
-      var element = document.getElementById("courseNumber"); 
-      element.appendChild(para);
-      element.appendChild(para1);
-
-    }
-  }
-
-  function checkEmail(email){
-
-  var email = document.getElementById("email").value;
-
-  var length = email.length;
-  var name = "";
-  if (email.includes("@ucc.on.ca")){
-     var name = email.substring(0, email.indexOf("."));
-     var newname = name.charAt(0).toUpperCase() + name.slice(1)
-     M.toast({html: 'Welcome '+newname+'!'})
-
-    const lPage = document.getElementById("firstPage");
-    lPage.style.display = "none";
-    const ePage = document.getElementById("secondPage");
-    ePage.style.display = "block";
-    const rPage = document.getElementById("thirdPage");
-    rPage.style.display = "none";
-   }
-  else{
-        M.toast({html: 'Please enter a UCC Email'})
-      }
-
-}
-
-
-	function startQuiz(){
-	  const quiz = document.getElementById("courseQuiz");
-	  quiz.style.display = "block";
-	}
-	function finalQuiz(){
-		const art = document.getElementById("art");
-		art.style.display = "none";
-		const film = document.getElementById("film");
-		film.style.display = "none";
-		const music = document.getElementById("music");
-		music.style.display = "none";
-		const drama = document.getElementById("drama");
-		drama.style.display = "none";
-		const economics = document.getElementById("economics");
-		economics.style.display = "none";
-		const geography = document.getElementById("geography");
-		geography.style.display = "none";
-		const history = document.getElementById("history");
-		history.style.display = "none";
-		const philosophy = document.getElementById("philosophy");
-		philosophy.style.display = "none";
-		const aa = document.getElementById("aa");
-		aa.style.display = "none";
-		const ai = document.getElementById("ai");
-		ai.style.display = "none";
-		const chemistry = document.getElementById("chemistry");
-		chemistry.style.display = "none";
-		const physics = document.getElementById("physics");
-		physics.style.display = "none";
-		const bio = document.getElementById("bio");
-		bio.style.display = "none";
-		const cs = document.getElementById("cs");
-		cs.style.display = "none";
-		var arts = document.getElementById("option1").value;
-	    var humanity = document.getElementById("option2").value;
-	    var math = document.getElementById("option3").value;
-	    var science = document.getElementById("option4").value;
-
-	    const quiz = document.getElementById("courseQuiz");
-	  	quiz.style.display = "none";
-
-	  	const showAll = document.getElementById("showAll");
-		art.style.display = "block";
-
-	    if(arts == 'art'){
-	  		art.style.display = "block";
-	    }
-	    else if(arts == 'film'){
-	  		film.style.display = "block";
-	    }
-	    else if(arts == 'music'){
-	  		music.style.display = "block";
-	    }
-	    else{
-	  		drama.style.display = "block";
-	    }
-
-
-	    if(humanity=='econ'){
-	  		economics.style.display = "block";
-	    }
-	    else if(humanity=='geo'){
-	  		geography.style.display = "block";
-	    }
-	    else if(humanity=='history'){
-	  		history.style.display = "block";
-	    }
-	    else{
-	  		philosophy.style.display = "block";
-	    }
-	    
-
-	    if(math=='aa'){
-	  		aa.style.display = "block";
-	    }
-	    else{
-	  		ai.style.display = "block";
-	    }
-	  
-	  
-	  	if(science=='chem'){
-	  		chemistry.style.display = "block";
-	  	}
-	  	else if(science=='physics'){
-	  		physics.style.display = "block";
-	  	}
-	  	else if(science=='bio'){
-	  		bio.style.display = "block";
-	  	}
-	  	else{
-	  		cs.style.display = "block";
-	  	}
-	  
-	}
-
-	function showAll(){
-		const art = document.getElementById("art");
-		art.style.display = "block";
-		const film = document.getElementById("film");
-		film.style.display = "block";
-		const music = document.getElementById("music");
-		music.style.display = "block";
-		const drama = document.getElementById("drama");
-		drama.style.display = "block";
-		const economics = document.getElementById("economics");
-		economics.style.display = "block";
-		const geography = document.getElementById("geography");
-		geography.style.display = "block";
-		const history = document.getElementById("history");
-		history.style.display = "block";
-		const philosophy = document.getElementById("philosophy");
-		philosophy.style.display = "block";
-		const aa = document.getElementById("aa");
-		aa.style.display = "block";
-		const ai = document.getElementById("ai");
-		ai.style.display = "block";
-		const chemistry = document.getElementById("chemistry");
-		chemistry.style.display = "block";
-		const physics = document.getElementById("physics");
-		physics.style.display = "block";
-		const bio = document.getElementById("bio");
-		bio.style.display = "block";
-		const cs = document.getElementById("cs");
-		cs.style.display = "block";
-	}
-
-
-
-	var ctx = document.getElementById('myChart').getContext('2d');
-	var myChart = new Chart(ctx, {
-	    type: 'pie',
-	    data: {
-	        labels: ['Economics', 'Geography', 'History', 'Philosophy'],
-	        datasets: [{
-	            label: '# of Votes',
-	            data: [23, 10, 13, 1],
-	            backgroundColor: [
-	                'rgba(255, 99, 132, 0.2)',
-	                'rgba(54, 162, 235, 0.2)',
-	                'rgba(75, 192, 192, 0.2)',
-	                'rgba(153, 102, 255, 0.2)'
-	            ],
-	            borderColor: [
-	                'rgba(255, 99, 132, 1)',
-	                'rgba(54, 162, 235, 1)',
-	                'rgba(75, 192, 192, 1)',
-	                'rgba(153, 102, 255, 1)'
-	            ],
-	            borderWidth: 1
-	        }]
-	    },
-	    options: {
-	        scales: {
-	            yAxes: [{
-	                ticks: {
-	                    beginAtZero: true
-	                }
-	            }]
-	        }
-	    }
-	});
-
-
-
-
-
-
-
-</script>
 
 </body>
