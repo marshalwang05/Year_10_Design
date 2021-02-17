@@ -1,16 +1,38 @@
-function checkEmail(email){
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Economics', 'Geography', 'History', 'Philosophy'],
+        datasets: [{
+            label: '# of Votes',
+            data: [23, 10, 13, 1],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
 
-  var email = document.getElementById("email").value;
 
-  var length = email.length;
-  var name = "";
-  if (email.includes("@ucc.on.ca")){
-     var name = email.substring(0, email.indexOf("."));
-     var newname = name.charAt(0).toUpperCase() + name.slice(1)
-     M.toast({html: 'Welcome '+newname+'!'})
-   }
-  else{
-        M.toast({html: 'Please enter a UCC Email'})
-      }
 
-}
+
+

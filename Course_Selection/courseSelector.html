@@ -2,6 +2,13 @@
 <html>
 <head>
 
+	<meta charset=utf8 />
+
+
+	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+
+
+
 	<link rel="stylesheet" href="courseSelector.css">
 
 	<!--Materialize CSS -->
@@ -29,9 +36,14 @@
 
 
 <body>
-
-
-	<div id = "firstPage" class="row">
+<div id = "errorpage" style="display: none">
+	Error! Service is not configured for this user. Please use a UCC google account.
+	<button onclick="signout()">Choose New Account</button>
+</div>
+<div id = "mainpage">
+	<div id = "uid"></div>
+	<button onclick = "signout()">Sign Out</button>
+	<div id = "firstPage" class="row" style="background-color: #0020C2">
 		<div class="container">
 	      	<div class="col s6" id = "card1">
 				<div class="height-wrapper valign-wrapper bg" id="bg1">
@@ -39,20 +51,10 @@
 		            	<br>
 		            	<br>
 		            	<br>
-			            <p style="font-size: 24px;"><b>Welcome to Course Helper, a website dedicated to helping UCC students find the courses they want to study</b></p>
+			            <p style="font-size: 28px;"><b>Welcome to Course Helper, a website dedicated to helping UCC students find the courses they want to study</b></p>
 			            <br>
              			<p style="font-size: 18px;">Please enter your UCC email to get started.</p>
 		            </div>
-		            <br>
-		            <br>
-		            <br>
-		            <br>
-		            <br>
-		            <br><br>
-		            <br>
-		            <br><br>
-		            <br>
-		            <br>
 	          	</div>
 			</div>
 
@@ -70,7 +72,16 @@
 						<br>
 						<br>
 						<br>
-
+						<br>
+				  		<br>
+				  		<br>
+				  		<br>
+				  		<br>
+				  		<br>
+				  		<br>
+				  		<br>
+				  		<br>
+				  		<br>
 				        <button type="submit" class="waves-effect waves-light btn" onclick='checkEmail()'>Submit</button>
 					</div>
 				</div>
@@ -78,398 +89,593 @@
 		  		<br>
 		  		<br>
 		  		<br>
-		  		<br>
-		  		<br>
+
 			</div>
 
 		</div>
 	</div>
 
-	<div id="secondPage">
+	<div id="secondPage" style='width:100%;height:100%; background-color: #CFECEC;'>
+		
+			<img class="sticky" src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Upper_Canada_College_Crest.svg/1200px-Upper_Canada_College_Crest.svg.png" length = "192" width = "160">
 
-		<img class="sticky" src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Upper_Canada_College_Crest.svg/1200px-Upper_Canada_College_Crest.svg.png" alt="Avatar" length = "180" width = "150">
+		<div class="container">
 
-		<form class="">
-			<div class="input-field col s12">
-				<select>
-					<option value="" disabled selected>Which of the following describes you the best: </option>
-					<option value="1">Deep thinker</option>
-					<option value="2">Active Learner</option>
-					<option value="3">Expressive</option>
-					<option value="3">Communicative</option>
-				</select>
-				<label>1.</label>
-			</div>
-			<div class="input-field col s12">
-				<select>
-					<option value="" disabled selected>Which appeals to you the most: </option>
-					<option value="1">Contemplating life</option>
-					<option value="2">Option 2</option>
-					<option value="3">Option 3</option>
-					<option value="3">Option 3</option>
-				</select>
-				<label>2.</label>
-			</div>
-			<div class="input-field col s12">
-				<select>
-					<option value="" disabled selected>What is your best trait: </option>
-					<option value="1">Option 1</option>
-					<option value="2">Option 2</option>
-					<option value="3">Option 3</option>
-					<option value="3">Option 3</option>
-				</select>
-				<label>3.</label>
-			</div>
-			<div class="input-field col s12">
-				<select>
-					<option value="" disabled selected>What are you best at: </option>
-					<option value="1">Option 1</option>
-					<option value="2">Option 2</option>
-					<option value="3">Option 3</option>
-					<option value="3">Option 3</option>
-				</select>
-				<label>4.</label>
-			</div>
-			<div class="input-field col s12">
-				<select>
-					<option value="" disabled selected>Would you rather: </option>
-					<option value="1">Option 1</option>
-					<option value="2">Option 2</option>
-					<option value="3">Option 3</option>
-					<option value="3">Option 3</option>
-				</select>
-				<label>5.</label>
-			</div>
-			<div class="input-field col s12">
-				<select>
-					<option value="" disabled selected>Which appeals to you more: </option>
-					<option value="1">Option 1</option>
-					<option value="2">Option 2</option>
-					<option value="3">Option 3</option>
-					<option value="3">Option 3</option>
-				</select>
-				<label>6.</label>
-			</div>
-			<div class="input-field col s12">
-				<select>
-					<option value="" disabled selected>Which of these have you already learned: </option>
-					<option value="1">Option 1</option>
-					<option value="2">Option 2</option>
-					<option value="3">Option 3</option>
-					<option value="3">Option 3</option>
-				</select>
-				<label>7.</label>
-			</div>
-			<div class="input-field col s12">
-				<select>
-					<option value="" disabled selected>Do you have interests in learning new languages: </option>
-					<option value="1">Option 1</option>
-					<option value="2">Option 2</option>
-					<option value="3">Option 3</option>
-					<option value="3">Option 3</option>
-				</select>
-				<label>8.</label>
-			</div>
-			<div class="input-field col s12">
-				<select>
-					<option value="" disabled selected>Would you rather: </option>
-					<option value="1">Have a broad study with a little bit of everything</option>
-					<option value="2">Have applicational studies that are easily seen</option>
-					<option value="3">Gain insight on micro aspects of the world</option>
-					<option value="3">Gain a more logical perspective on problems</option>
-				</select>
-				<label>9.</label>
-			</div>
-		</form>
+		
+			<h3><b>Please follow the directions and enjoy!</b></h3>
+			<br>
+			<br>
+			<button type="submit" class="waves-effect waves-light btn" onclick='startQuiz()' id="startButton">Press To Start</button>
+			<div id="courseQuiz">
+				<form class="quiz" style='width:50%;height:100%; float: inline center-block;'>
+					<div class="input-field col l4">
+						1. Which of the following describes you the best: 
+						<select name = 'question1' id='option1'>
+							<option value="art">Deep thinker</option>
+							<option value="film">Active Learner</option>
+							<option value="music">Expressive</option>
+							<option value="drama">Communicative</option>
+						</select>
+					</div>
+					<div class="input-field col l4">
+						2. Which appeals to you the most:
+						<select>
+							<option value="1">Contemplating life</option>
+							<option value="2">Helping others</option>
+							<option value="3">Calming down someone</option>
+							<option value="3">Making people laugh</option>
+						</select>
+					</div>
+					<div class="input-field col l4">
+						3. What is your best trait:
+						<select name = 'question2' id='option2'>
+							<option value="econ">Deep analysis</option>
+							<option value="geo">Understanding people</option>
+							<option value="history">World view</option>
+							<option value="philosophy">Reflecting</option>
 
-		<div class="row">
-	 
+						</select>
+					</div>
+					<div class="input-field col s4">
+						4. What are you best at:
+						<select>
+							<option value="1">Calculations</option>
+							<option value="2">Empathizing with others</option>
+							<option value="3">Helping others</option>
+							<option value="3">Critical analysis</option>
+							<option value="3">Planning</option>
+						</select>
+					</div>
+					<div class="input-field col s4">
+						<select name = 'question3' id='option3'>
+							<option value="" disabled unselected>5. Would you rather: </option>
+							<option value="aa">Gain an abundance of knowledge</option>
+							<option value="ai">Use your knowledge</option>
+						</select>
+					</div>
+					<div class="input-field col s4">
+						<select>
+							<option value="" disabled unselected>6. Which appeals to you more: </option>
+							<option value="1">Researching</option>
+							<option value="2">Engineering</option>
+							<option value="3">Finance</option>
+							<option value="3">Analyst</option>
+						</select>
+					</div>
+					<div class="input-field col l4">
+						<select name = 'question4' id='option4'>
+							<option value="" disabled unselected>7. Would you rather: </option>
+							<option value="chem">Have a broad study with a little bit of everything</option>
+							<option value="physics">Have applicational studies that are easily seen</option>
+							<option value="bio">Gain insight on micro aspects of the world</option>
+							<option value="cs">Gain a more logical perspective on problems</option>
+						</select>
+					</div>
+				</form>
+				<button type="submit" class="waves-effect waves-light btn" onclick='finalQuiz()' id="startButton">Submit</button>
+				<br>
+				<br>
+				<br>
+				<button type="submit" class="waves-effect waves-light btn" onclick='showAll()' id="showAll">Show All</button>
+			</div>
+			<div class="row" id="courses">
+		 
+			    <!--Arts-->
+				    <div class="col s4 m4 l4" id="art">
+				      <div class="card">
+				        <div class="card-image">
+				          <img src="https://images.unsplash.com/photo-1584661156681-540e80a161d3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cGFpbnRlcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" style="height: 250px">
+				        </div>
+				        <div class="card-content">
+				        	<span class="card-title">Art</span>
+				          <p>This course enables students to further develop their knowledge and skills in visual arts. Students will use the creative process to explore a wide range of themes through studio work that may include drawing, painting, sculpting, and printmaking, as well as the creation of collage, multimedia works, and works using emerging technologies. Students will use the critical analysis process when evaluating their own work and the work of others. The course may be delivered as a comprehensive program or through a program focused on a particular art form.</p>
+				        </div>
+				      </div>
+				    </div>
 
-		    <!--Arts-->
-			    <div class="col s4 m4 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">Art</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
+					<div class="col s4 m4 l4" id="film">
+				      <div class="card">
+				        <div class="card-image">
+				          <img src="https://images.unsplash.com/photo-1534684686641-05569203ecca?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmlsbWluZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" style="height: 250px">
+				        </div>
+				        <div class="card-content">
+				        	<span class="card-title">Film</span>
+				          <p>This course focuses on enabling students to refine their use of the creative process when creating and presenting two- and three-dimensional art works using a variety of traditional and emerging media and technologies. Students will use the critical analysis process to deconstruct art works and explore connections between art and society. The studio program enables students to explore a range of materials, processes, and techniques that can be applied in their own art production. Students will also make connections between various works of art.</p>
+				        </div>
+				      </div>
+				    </div>
+				    
+				    <div class="col s4 m4 l4" id="music">
+				      <div class="card">
+				        <div class="card-image">
+				          <img src="http://images.ctfassets.net/3s5io6mnxfqz/2tgKAE2XKmpgAlZqoSxRW/ed92236cb34d77fff34fbcefb1a5f805/AdobeStock_187055739.jpeg" style="height: 250px">
+				        </div>
+				        <div class="card-content">
+				        	<span class="card-title">Music</span>
+				          <p>This course introduces the mathematical concept of the function by extending students’ experiences with linear and quadratic relations. Students will investigate properties of discrete and continuous functions, including trigonometric and exponential functions; represent functions numerically, algebraically, and graphically; solve problems involving applications of functions; investigate inverse functions; and develop facility in determining equivalent algebraic expressions. Students will reason mathematically and communicate their thinking as they solve multi-step problems.</p>
+				        </div>
+				      </div>
+				    </div>
 
-				<div class="col s4 m4 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">Film</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
+				   <div class="col s4 m4 l4" id="drama">
+				      <div class="card">
+				        <div class="card-image">
+				          <img src="https://media.istockphoto.com/vectors/gold-comedy-and-tragedy-theater-masks-vector-id1127806019?b=1&k=6&m=1127806019&s=612x612&w=0&h=Ak6JCn3IzvU9sIjStWSjcG6IESJnRgCJhaZTZOatjJQ=" style="height: 250px">
+				        </div>
+				        <div class="card-content">
+				        	<span class="card-title">Drama</span>
+				          <p>This course requires students to create and perform in dramatic presentations. Students will analyse, interpret, and perform dramatic works from various cultures and time periods. Students will research various acting styles and conventions that could be used in their presentations, and analyse the functions of playwrights, directors, actors, designers, technicians, and audiences.</p>
+				        </div>
+				      </div>
+				    </div>
+
+
+				<!--Humanities-->
+				    <div class="col s12 m6 l4" id="economics">
+				      <div class="card">
+				        <div class="card-image">
+				          <img src="https://i.guim.co.uk/img/media/d50676d0a7bf1f2d68922566783c746a3fe01f27/171_0_5120_3072/master/5120.jpg?width=300&quality=85&auto=format&fit=max&s=4d7be0a5ae7bc5719905053fcfbf9f23" style="height: 250px">
+				        </div>
+				        <div class="card-content">
+				        	<span class="card-title">Economics</span>
+				          <p>This course requires students to create and perform in dramatic presentations. Students will analyse,interpret, and perform dramatic works from various cultures and time periods. Students will research various acting styles and conventions that could be used in their presentations, and analyse the functions of playwrights, directors, actors, designers.</p>
+				        </div>
+				      </div>
+				    </div>
+
+					<div class="col s12 m6 l4" id="geography">
+				      <div class="card">
+				        <div class="card-image">
+				          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7ChT_NCHBvrReDlRtXmsTyeL6G8LJY2sNJQ&usqp=CAU" style="height: 250px">
+				        </div>
+				        <div class="card-content">
+				        	<span class="card-title">Geography</span>
+				          <p>This course requires students to create and perform in dramatic presentations. Students will analyse, interpret, and perform dramatic works from various cultures and time periods. Students will research various acting styles and conventions that could be used in their presentations, and analyse the functions of playwrights, directors, actors, designers, technicians, and audiences.</p>
+				        </div>
+				      </div>
+				    </div>			   
+
+				   <div class="col s12 m6 l4" id="history">
+				      <div class="card">
+				        <div class="card-image">
+				          <img src="https://media2.s-nbcnews.com/i/newscms/2020_15/3297941/200406-book-shelf-library-generic-ac-1101p_020e2306d7f38084a8fc201ace0bfa2e.jpg" style="height: 250px">
+				        </div>
+				        <div class="card-content">
+				        	<span class="card-title">History</span>
+				          <p>This course requires students to create and perform in dramatic presentations. Students will analyse, interpret, and perform dramatic works from various cultures and time periods. Students will research various acting styles and conventions that could be used in their presentations, and analyse the functions of playwrights, directors, actors, designers, technicians, and audiences.</p>
+				        </div>
+				      </div>
+				    </div>
+
+				    <div class="col s12 m6 l4" id="philosophy">
+				      <div class="card">
+				        <div class="card-image">
+				          <img src="https://adfontes.com/wp-content/uploads/2015/01/bigstock-Statue-Of-Plato-In-Greece-40280131.jpg" style="height: 250px">
+				        </div>
+				        <div class="card-content">
+				        	<span class="card-title">Philosophy</span>
+				          <p>This course introduces the mathematical concept of the function by extending students’ experiences with linear and quadratic relations. Students will investigate properties of discrete and continuous functions, including trigonometric and exponential functions.</p>
+				        </div>
+				      </div>
+				    </div>
 			    
-			    <div class="col s4 m4 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">Music</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
+				    <!--Math-->
+				    <div class="col s12 m6 l4" id="aa">
+				      <div class="card">
+				        <div class="card-image">
+				          <img src="https://www.incimages.com/uploaded_files/image/1920x1080/getty_470493341_20001333200092800_398689.jpg">
+				        </div>
+				        <div class="card-content">
+				        	<span class="card-title">Analysis and Approaches</span>
+				          <p>This course introduces the mathematical concept of the function by extending students’ experiences with linear and quadratic relations. Students will investigate properties of discrete and continuous functions, including trigonometric and exponential functions; represent functions numerically, algebraically, and graphically; solve problems involving applications of functions; investigate inverse functions; and develop facility in determining equivalent algebraic expressions. Students will reason mathematically and communicate their thinking as they solve multi-step problems.</p>
+				        </div>
+				      </div>
+				    </div>
 
-			   <div class="col s4 m4 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">Film</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
+					<div class="col s12 m6 l4" id="ai">
+				      <div class="card">
+				        <div class="card-image">
+				          <img src="https://www.incimages.com/uploaded_files/image/1920x1080/getty_470493341_20001333200092800_398689.jpg" style="height: 250px">
+				        </div>
+				        <div class="card-content">
+				        	<span class="card-title">Analysis and Interpretation</span>
+				          <p>This course introduces the mathematical concept of the function by extending students’ experiences with linear and quadratic relations. Students will investigate properties of discrete and continuous functions, including trigonometric and exponential functions; represent functions numerically, algebraically, and graphically; solve problems involving applications of functions; investigate inverse functions.</p>
+				        </div>
+				      </div>
+				    </div>
+				    
+				    <!--Sciences -->
+				    <div class="col s12 m6 l4" id = "chemistry">
+				      <div class="card">
+				        <div class="card-image">
+				          <img src="https://www.thoughtco.com/thmb/XuJo7-P3gRDQshW69iFDNkFdS1U=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-545286316-433dd345105e4c6ebe4cdd8d2317fdaa.jpg" style="height: 250px">
+				        </div>
+				        <div class="card-content">
+				        	<span class="card-title">Chemistry</span>
+				          <p>This course enables students to deepen their understanding of chemistry through the study of the properties of chemicals and chemical bonds; chemical reactions and quantitative relationships in those reactions; solutions and solubility; and atmospheric chemistry and the behaviour of gases. Students will further develop their analytical skills and investigate the qualitative and quantitative properties of matter, as well as the impact of some common chemical reactions on society and the environment.</p>
+				        </div>
+				      </div>
+				    </div>
 
+				    <div class="col s12 m6 l4" id = "physics">
+				      <div class="card">
+				        <div class="card-image">
+				          <img src="https://www.environmentalscience.org/wp-content/uploads/2018/08/physics-640x416.jpg" style="height: 250px">
+				        </div>
+				        <div class="card-content">
+				        	<span class="card-title">Physics</span>
+				          <p>This course enables students to deepen their understanding of chemistry through the study of the properties of chemicals and chemical bonds; chemical reactions and quantitative relationships in those reactions; solutions and solubility; and atmospheric chemistry and the behaviour of gases. Students will further develop their analytical skills and investigate the qualitative and quantitative properties of matter, as well as the impact of some common chemical reactions on society and the environment.</p>
+				        </div>
+				      </div>
+				    </div>
 
-			<!--Humanities-->
-			    <div class="col s12 m6 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">Economics</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
+				    <div class="col s12 m6 l4" id = "bio">
+				      <div class="card">
+				        <div class="card-image">
+				          <img src="https://thumbs.dreamstime.com/b/genetic-research-biotech-science-concept-human-biology-tech-genetic-research-biotech-science-concept-human-biology-117351875.jpg" style="height: 250px">
+				        </div>
+				        <div class="card-content">
+				        	<span class="card-title">Biology</span>
+				          <p>This course introduces the mathematical concept of the function by extending students’ experiences with linear and quadratic relations. Students will investigate properties of discrete and continuous functions, including trigonometric and exponential functions; represent functions numerically, algebraically, and graphically; solve problems involving applications of functions; investigate inverse functions; and develop facility in determining equivalent algebraic expressions. Students will reason mathematically and communicate their thinking as they solve multi-step problems.</p>
+				        </div>
+				      </div>
+				    </div>
 
-				<div class="col s12 m6 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">Geography</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
-			    
-			    <div class="col s12 m6 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">Politics</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
+				    <div class="col s12 m6 l4" id = "cs">
+				      <div class="card">
+				        <div class="card-image">
+				          <img src="https://www.timeshighereducation.com/student/sites/default/files/computer_programming.jpg" style="height: 250px">
+				        </div>
+				        <div class="card-content">
+				        	<span class="card-title">Computer Science</span>
+				          <p>This course introduces students to computer science. Students will design software independently and as part of a team, using industry-standard programming tools and applying the software development life-cycle model. They will also write and use subprograms within computer programs. Students will develop creative solutions for various types of problems as their understanding of the computing environment grows. They will also explore environmental and ergonomic issues, emerging research in computer science, and global career trends in computer-related fields.</p>
+				        </div>
+				      </div>
+				    </div>
 
-			   <div class="col s12 m6 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">History</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
-
-			    <div class="col s12 m6 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">Philosophy</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
-		    
-			    <!--Math-->
-			    <div class="col s12 m6 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">Analysis and Approaches</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
-
-				<div class="col s12 m6 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">Analysis and Interpretations</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
-			    
-			    <!--Languages-->
-
-			    <div class="col s12 m6 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">French</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
-			    
-			    <div class="col s12 m6 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">Spanish</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
-
-			   <div class="col s12 m6 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">Mandarin</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
-
-			    <div class="col s12 m6 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">Latin</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
-
-			    <!--Sciences -->
-			    <div class="col s12 m6 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">Chemistry</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
-
-			    <div class="col s12 m6 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">Physics</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
-
-			    <div class="col s12 m6 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">Biology</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
-
-			    <div class="col s12 m6 l4">
-			      <div class="card">
-			        <div class="card-image">
-			          <img src="">
-			        </div>
-			        <div class="card-content">
-			        	<span class="card-title">Computer Science</span>
-			          <p>Sample club description here _____________________</p>
-			        </div>
-			      </div>
-			    </div>
-
+			</div>
 		</div>
 	</div> 
 
 	<div id="thirdPage">
-		<div id="courseNumber">
-			<p>Number of Courses you know</p>
-			<input type="text" name="Submit" id="numberBox">
-			<br>
-			<button type="submit" value = "Submit" onclick="forLoop()">Number</button>
-			<form action="#">
-			    <p class="range-field">
-			      	<input type="range" id="test5" min="0" max="7" />
-			    </p>
-  			</form>
-		<br>
-	</div>
-	</div>
+		<div class="container">
+			<div id="courseNumber">
+				<p>Please help this website by telling us what courses you picked</p>
+				
+				<input type="text" name="Submit" id="numberBox"  style='width:10%;height:100%;'>
+				<br>
+				<button type="submit" value = "Submit" onclick="forLoop()">Number</button>
+				<br>
+			</div>
 
-  <script src="courseSelector.js"></script>
+			<div style = "width: 30%">
+		        <p>Humanities Course Distribution</p>
+		        <canvas id="myChart" width="100" height="100"></canvas>
+		    </div>
+    	</div>
+	</div>
+</div>
 
+	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-database.js"></script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+
+<script>
+   var provider = new firebase.auth.GoogleAuthProvider();
+    var userId = document.getElementById("uid").innerHTML;
+
+    var config = {
+    apiKey: "AIzaSyAAOtTgZfosZ1CKgZxzDciIr6uCSXCIsDA",
+    authDomain: "course-selection-559e0.firebaseapp.com",
+    projectId: "course-selection-559e0",
+    storageBucket: "course-selection-559e0.appspot.com",
+    messagingSenderId: "164519433062",
+    appId: "1:164519433062:web:3e7e75812d45d91300aea7",
+    measurementId: "G-K45VYCNNWX"
+    };
+
+    firebase.initializeApp(config);
+    firebase.auth().onAuthStateChanged(function(user){
+        if (user == null) {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithRedirect(provider).then(function(result) {
+              window.location.replace("fbtest.html");
+       });
+        return;
+        } else {
+            userEmail = user.email;
+            document.getElementById("uid").innerHTML = userEmail;
+        }
+        if (userEmail.includes("@ucc.on.ca")){
+          mainpage = document.getElementById("mainpage");
+          mainpage.style.display = "block";
+        } else{
+          errorpage = document.getElementById("errorpage")
+          mainpage.style.display = "none";
+          errorpage.style.display = "block";
+        }
+});
+
+function signout(){
+  firebase.auth().signOut()
+}  
+	
+	  const fPage = document.getElementById("firstPage");
+	  fPage.style.display = "block";
+	  const sPage = document.getElementById("secondPage");
+	  sPage.style.display = "none";
+	  const lPage = document.getElementById("thirdPage");
+	  lPage.style.display = "block";
+
+	  const quiz = document.getElementById("courseQuiz");
+	  quiz.style.display = "none";
+
+	  const art = document.getElementById("art");
+	  art.style.display = "none";
+	  const film = document.getElementById("film");
+	  film.style.display = "none";
+	  const music = document.getElementById("music");
+	  music.style.display = "none";
+	  const drama = document.getElementById("drama");
+	  drama.style.display = "none";
+	  const economics = document.getElementById("economics");
+	  economics.style.display = "none";
+	  const geography = document.getElementById("geography");
+	  geography.style.display = "none";
+	  const history = document.getElementById("history");
+	  history.style.display = "none";
+	  const philosophy = document.getElementById("philosophy");
+	  philosophy.style.display = "none";
+	  const aa = document.getElementById("aa");
+	  aa.style.display = "none";
+	  const ai = document.getElementById("ai");
+	  ai.style.display = "none";
+	  const chemistry = document.getElementById("chemistry");
+	  chemistry.style.display = "none";
+	  const physics = document.getElementById("physics");
+	  physics.style.display = "none";
+	  const bio = document.getElementById("bio");
+	  bio.style.display = "none";
+	  const cs = document.getElementById("cs");
+	  cs.style.display = "none";
+
+
+
+
+	function forLoop(){
+    var setnumber = document.getElementById('numberBox').value;
+    for (var i=0; i<setnumber; i++){
+
+      var para = document.createElement("input"); 
+      var para1 = document.createElement("br"); 
+      para.style.width = "10%";
+      var node = document.createTextNode(""); 
+      para.appendChild(node);  
+
+      var element = document.getElementById("courseNumber"); 
+      element.appendChild(para);
+      element.appendChild(para1);
+
+    }
+  }
+
+  function checkEmail(email){
+
+  var email = document.getElementById("email").value;
+
+  var length = email.length;
+  var name = "";
+  if (email.includes("@ucc.on.ca")){
+     var name = email.substring(0, email.indexOf("."));
+     var newname = name.charAt(0).toUpperCase() + name.slice(1)
+     M.toast({html: 'Welcome '+newname+'!'})
+
+    const lPage = document.getElementById("firstPage");
+    lPage.style.display = "none";
+    const ePage = document.getElementById("secondPage");
+    ePage.style.display = "block";
+    const rPage = document.getElementById("thirdPage");
+    rPage.style.display = "none";
+   }
+  else{
+        M.toast({html: 'Please enter a UCC Email'})
+      }
+
+}
+
+
+	function startQuiz(){
+	  const quiz = document.getElementById("courseQuiz");
+	  quiz.style.display = "block";
+	}
+	function finalQuiz(){
+		const art = document.getElementById("art");
+		art.style.display = "none";
+		const film = document.getElementById("film");
+		film.style.display = "none";
+		const music = document.getElementById("music");
+		music.style.display = "none";
+		const drama = document.getElementById("drama");
+		drama.style.display = "none";
+		const economics = document.getElementById("economics");
+		economics.style.display = "none";
+		const geography = document.getElementById("geography");
+		geography.style.display = "none";
+		const history = document.getElementById("history");
+		history.style.display = "none";
+		const philosophy = document.getElementById("philosophy");
+		philosophy.style.display = "none";
+		const aa = document.getElementById("aa");
+		aa.style.display = "none";
+		const ai = document.getElementById("ai");
+		ai.style.display = "none";
+		const chemistry = document.getElementById("chemistry");
+		chemistry.style.display = "none";
+		const physics = document.getElementById("physics");
+		physics.style.display = "none";
+		const bio = document.getElementById("bio");
+		bio.style.display = "none";
+		const cs = document.getElementById("cs");
+		cs.style.display = "none";
+		var arts = document.getElementById("option1").value;
+	    var humanity = document.getElementById("option2").value;
+	    var math = document.getElementById("option3").value;
+	    var science = document.getElementById("option4").value;
+
+	    const quiz = document.getElementById("courseQuiz");
+	  	quiz.style.display = "none";
+
+	  	const showAll = document.getElementById("showAll");
+		art.style.display = "block";
+
+	    if(arts == 'art'){
+	  		art.style.display = "block";
+	    }
+	    else if(arts == 'film'){
+	  		film.style.display = "block";
+	    }
+	    else if(arts == 'music'){
+	  		music.style.display = "block";
+	    }
+	    else{
+	  		drama.style.display = "block";
+	    }
+
+
+	    if(humanity=='econ'){
+	  		economics.style.display = "block";
+	    }
+	    else if(humanity=='geo'){
+	  		geography.style.display = "block";
+	    }
+	    else if(humanity=='history'){
+	  		history.style.display = "block";
+	    }
+	    else{
+	  		philosophy.style.display = "block";
+	    }
+	    
+
+	    if(math=='aa'){
+	  		aa.style.display = "block";
+	    }
+	    else{
+	  		ai.style.display = "block";
+	    }
+	  
+	  
+	  	if(science=='chem'){
+	  		chemistry.style.display = "block";
+	  	}
+	  	else if(science=='physics'){
+	  		physics.style.display = "block";
+	  	}
+	  	else if(science=='bio'){
+	  		bio.style.display = "block";
+	  	}
+	  	else{
+	  		cs.style.display = "block";
+	  	}
+	  
+	}
+
+	function showAll(){
+		const art = document.getElementById("art");
+		art.style.display = "block";
+		const film = document.getElementById("film");
+		film.style.display = "block";
+		const music = document.getElementById("music");
+		music.style.display = "block";
+		const drama = document.getElementById("drama");
+		drama.style.display = "block";
+		const economics = document.getElementById("economics");
+		economics.style.display = "block";
+		const geography = document.getElementById("geography");
+		geography.style.display = "block";
+		const history = document.getElementById("history");
+		history.style.display = "block";
+		const philosophy = document.getElementById("philosophy");
+		philosophy.style.display = "block";
+		const aa = document.getElementById("aa");
+		aa.style.display = "block";
+		const ai = document.getElementById("ai");
+		ai.style.display = "block";
+		const chemistry = document.getElementById("chemistry");
+		chemistry.style.display = "block";
+		const physics = document.getElementById("physics");
+		physics.style.display = "block";
+		const bio = document.getElementById("bio");
+		bio.style.display = "block";
+		const cs = document.getElementById("cs");
+		cs.style.display = "block";
+	}
+
+
+
+	var ctx = document.getElementById('myChart').getContext('2d');
+	var myChart = new Chart(ctx, {
+	    type: 'pie',
+	    data: {
+	        labels: ['Economics', 'Geography', 'History', 'Philosophy'],
+	        datasets: [{
+	            label: '# of Votes',
+	            data: [23, 10, 13, 1],
+	            backgroundColor: [
+	                'rgba(255, 99, 132, 0.2)',
+	                'rgba(54, 162, 235, 0.2)',
+	                'rgba(75, 192, 192, 0.2)',
+	                'rgba(153, 102, 255, 0.2)'
+	            ],
+	            borderColor: [
+	                'rgba(255, 99, 132, 1)',
+	                'rgba(54, 162, 235, 1)',
+	                'rgba(75, 192, 192, 1)',
+	                'rgba(153, 102, 255, 1)'
+	            ],
+	            borderWidth: 1
+	        }]
+	    },
+	    options: {
+	        scales: {
+	            yAxes: [{
+	                ticks: {
+	                    beginAtZero: true
+	                }
+	            }]
+	        }
+	    }
+	});
+
+
+
+
+
+
+
+</script>
 
 </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

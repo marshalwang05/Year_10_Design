@@ -1,14 +1,19 @@
 #bg1{
 	background-image: url("UCCPhoto.jpg");
-	height: 750px;
+	height: 765px;
 }
 
+.quiz > div{
+    height:100px;
+}
+.quiz > div > select{
+    display:block;
 
-
-
-
-
-
+}
+.inputbox{
+	width:10%;
+	height:100%;
+}
 
 
 
