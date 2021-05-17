@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Base Change Calculator</title>
+</head>
+<body>
+
+<h1>Welcome to the Base Calculator</h1>
+<h4>Enter some numbers as specified, and have your number converted</h4>
+<h4>The calculator can also do basic arithmetic in binary</h4>
+
+
+<h4>Decimal to Other</h4>
+<input type="text" placeholder="String" id = "N">
+<input type="text" placeholder="New Base" id = "otherBase">
+<button onclick="toOtherPosInt()">To Other Bases</button>
+
+<br>
+<h4>Other to Decimal</h4>
+<input type="text" placeholder="String" id = "toDecStr">
+<input type="text" placeholder="Current Base" id = "toDecBase">
+<button onclick="toDec()">To Decimal</button>
+
+<br>
+<h4>Decimal Base 10 to Binary</h4>
+<input type="text" placeholder="Decimal" id = "deci">
+<button onclick="toBinaryDecimal()">To Decimal</button>
+
+<br>
+<h4>Convert To Negative (Two's Complement)</h4>
+<input type="text" placeholder="Positive Representation" id = "numb">
+<button onclick="invertString()">Negative Representation</button>
+
+<br>
+<h4>Add Two Decimals in Binary</h4>
+<input type="text" placeholder="Number 1" id = "sum1">
+<input type="text" placeholder="Number 2" id = "sum2">
+<button onclick="addBin()">Add</button>
+
+<br>
+<h4>Subtract Two Decimals in Binary</h4>
+<input type="text" placeholder="Number 1" id = "sum3">
+<input type="text" placeholder="Number 2" id = "sum4">
+<button onclick="subtractBin()">Subtract</button>
+
+
+<br>
+
+
+
+
+
+
+<script src="baseChangeCalculatorFunctions.js"></script>
+
+</body>
+</html>
