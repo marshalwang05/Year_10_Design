@@ -104,9 +104,7 @@ function invertString(){
             return -1;
         }
 	}
-
-	console.log(newnumbInt)
-	console.log(addBinAgain(newnumb, "1"))
+	console.log("-" + addBinAgain(newnumb, "1"))
 }
 
 
